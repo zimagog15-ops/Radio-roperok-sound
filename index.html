@@ -212,6 +212,21 @@
         }
     });
 </script>
+<!-- Подключаем библиотеку VK Bridge -->
+<script src="https://unpkg.com"></script>
+
+<script>
+  // Запускаем мост связи с ВК
+  vkBridge.send('VKWebAppInit')
+    .then((data) => {
+      if (data.result) {
+        console.log("VK Bridge успешно запущен!");
+      }
+    })
+    .catch((error) => {
+      console.error("Ошибка запуска VK Bridge:", error);
+    });
+</script>
 
 </body>
 </html>
